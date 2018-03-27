@@ -13,6 +13,7 @@
 #include <iostream>
 #include <vector>
 
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 #include "openMVG/matching/kvld/algorithm.h"
 
@@ -170,7 +171,7 @@ public:
 //
 //kvldParameters: container of minimum inlier rate, the value of K (=3 initially) and geometric verification flag (true initially)
 
-float KVLD(const openMVG::image::Image<float>& I1,
+float DLLEXPORT KVLD(const openMVG::image::Image<float>& I1,
   const openMVG::image::Image<float>& I2,
   const std::vector<openMVG::features::SIOPointFeature> & F1,
   const std::vector<openMVG::features::SIOPointFeature> & F2,

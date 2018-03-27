@@ -60,7 +60,7 @@ Format GetFormat( const char *c );
 * @retval 0 If there was an error during load operation
 */
 template<typename T>
-int ReadImage( const char * path , Image<T> * image );
+int DLLEXPORT ReadImage( const char * path , Image<T> * image );
 
 /**
 * @brief Save an image<T> from the provided input filename
@@ -70,7 +70,7 @@ int ReadImage( const char * path , Image<T> * image );
 * @retval 0 If there was an error during save operation
 */
 template<typename T>
-int WriteImage( const char * path , const Image<T>& image );
+int DLLEXPORT WriteImage( const char * path , const Image<T>& image );
 
 /**
 * @brief Unsigned char specialization (The memory pointer must be null as input)
@@ -82,7 +82,7 @@ int WriteImage( const char * path , const Image<T>& image );
 * @retval 1 If loading is correct
 * @retval 0 If there was an error during load operation
 */
-int ReadImage( const char * path, std::vector<unsigned char> * image , int * w, int * h, int * depth );
+int DLLEXPORT ReadImage( const char * path, std::vector<unsigned char> * image , int * w, int * h, int * depth );
 
 /**
 * @brief Unsigned char specialization
@@ -94,7 +94,7 @@ int ReadImage( const char * path, std::vector<unsigned char> * image , int * w, 
 * @retval 1 If saving is correct
 * @retval 0 If there was an error during save operation
 */
-int WriteImage( const char * path , const std::vector<unsigned char>& array, const int w, const int h, const int depth );
+int DLLEXPORT WriteImage( const char * path , const std::vector<unsigned char>& array, const int w, const int h, const int depth );
 
 //--
 // PNG I/O

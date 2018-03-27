@@ -97,7 +97,7 @@ namespace tbmr
 
   // Template instantiation for WHITE features
   template
-  void Extract_tbmr
+  void DLLEXPORT Extract_tbmr
   (
     const image::Image<unsigned char> & ima,
     std::vector<features::AffinePointFeature> & features,
@@ -108,7 +108,7 @@ namespace tbmr
 
   // Template instantiation for DARK features
   template
-  void Extract_tbmr
+  void DLLEXPORT Extract_tbmr
   (
     const image::Image<unsigned char> & ima,
     std::vector<features::AffinePointFeature> & features,
@@ -118,7 +118,7 @@ namespace tbmr
   );
 
   template <typename Ordering>
-  void Extract_tbmr
+  void DLLEXPORT Extract_tbmr
   (
     const image::Image<unsigned char> & ima,
     std::vector<features::AffinePointFeature> & features,

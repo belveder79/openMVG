@@ -41,7 +41,7 @@
 namespace openMVG {
 namespace features {
 
-struct AKAZEKeypoint{
+struct DLLEXPORT AKAZEKeypoint{
 
   AKAZEKeypoint()
   {
@@ -70,7 +70,7 @@ struct TEvolution
 
 /* ************************************************************************* */
 // AKAZE Class Declaration
-class AKAZE {
+class DLLEXPORT AKAZE {
 
 public:
   struct Params

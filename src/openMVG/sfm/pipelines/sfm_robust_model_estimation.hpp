@@ -14,6 +14,7 @@
 #include <vector>
 
 #include "openMVG/geometry/pose3.hpp"
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
 namespace openMVG { namespace cameras { struct IntrinsicBase; } }
@@ -48,7 +49,7 @@ struct RelativePose_Info
  * @param[in] size_ima2 width, height of image 2
  * @param[in] max iteration count
  */
-bool robustRelativePose
+bool DLLEXPORT robustRelativePose
 (
   const cameras::IntrinsicBase * intrinsics1,
   const cameras::IntrinsicBase * intrinsics2,

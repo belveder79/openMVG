@@ -11,6 +11,12 @@
 
 #include "Eigen/Dense"
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 namespace openMVG
 {
 namespace image

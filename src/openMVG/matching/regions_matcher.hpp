@@ -23,7 +23,7 @@ namespace matching {
 /**
  * Match two Regions according a chosen MatcherType.
  */
-void DistanceRatioMatch
+void DLLEXPORT DistanceRatioMatch
 (
   float dist_ratio,   // Distance ratio
   matching::EMatcherType eMatcherType, // Matcher

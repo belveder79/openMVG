@@ -4,6 +4,7 @@ target_link_libraries(openMVG_sample_multiview_robustEssential_ba
   openMVG_image
   openMVG_features
   openMVG_matching
+  openMVG_multiview
   openMVG_system
   openMVG_sfm
   stlplus)

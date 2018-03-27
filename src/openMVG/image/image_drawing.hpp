@@ -26,7 +26,7 @@ namespace image
 * @param[out] pim Output image where color is set
 */
 template <typename Image, typename Color>
-inline void SafePutPixel( int yc, int xc, const Color& col, Image *pim )
+inline DLLEXPORT void SafePutPixel( int yc, int xc, const Color& col, Image *pim )
 {
   if ( pim )
   {
@@ -51,7 +51,7 @@ inline void SafePutPixel( int yc, int xc, const Color& col, Image *pim )
 * @param angle Rotation angle of the Ellipse
 */
 template <typename Image, typename Color>
-void DrawEllipse( int xc, int yc, int radiusA, int radiusB,
+void DLLEXPORT DrawEllipse( int xc, int yc, int radiusA, int radiusB,
                   const Color& col, Image *pim, double angle = 0.0 )
 {
   int a = radiusA, b = radiusB;
@@ -145,7 +145,7 @@ void DrawEllipse( int xc, int yc, int radiusA, int radiusB,
 * @param[out] pim Output image
 */
 template <typename Image, typename Color>
-void DrawCircle( int x, int y, int radius, const Color& col, Image *pim )
+void DLLEXPORT DrawCircle( int x, int y, int radius, const Color& col, Image *pim )
 {
   Image &im = *pim;
   if (  im.Contains( y + radius, x + radius )
@@ -201,7 +201,7 @@ void DrawCircle( int x, int y, int radius, const Color& col, Image *pim )
 * @param[out] pim Output image
 */
 template <typename Image, typename Color>
-void DrawLine( int xa, int ya, int xb, int yb, const Color& col, Image *pim )
+void DLLEXPORT DrawLine( int xa, int ya, int xb, int yb, const Color& col, Image *pim )
 {
   Image &im = *pim;
 
@@ -349,7 +349,7 @@ void DrawLine( int xa, int ya, int xb, int yb, const Color& col, Image *pim )
 * @param[out] pim Output image
 */
 template <typename Image, typename Color>
-void FilledCircle( int x, int y, int radius, const Color& col, Image *pim )
+void DLLEXPORT FilledCircle( int x, int y, int radius, const Color& col, Image *pim )
 {
   Image &im = *pim;
   if (  im.Contains( y + radius, x + radius )
@@ -401,7 +401,7 @@ void FilledCircle( int x, int y, int radius, const Color& col, Image *pim )
 * @param[out] pim Output image
 */
 template <typename Image, typename Color>
-void DrawLineThickness( int xa, int ya, int xb, int yb, const Color& col, int thickness, Image *pim )
+void DLLEXPORT DrawLineThickness( int xa, int ya, int xb, int yb, const Color& col, int thickness, Image *pim )
 {
   Image &im = *pim;
   int halfThickness = ( thickness + 1 ) / 2;

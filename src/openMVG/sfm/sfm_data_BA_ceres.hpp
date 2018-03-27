@@ -9,6 +9,7 @@
 #ifndef OPENMVG_SFM_SFM_DATA_BA_CERES_HPP
 #define OPENMVG_SFM_SFM_DATA_BA_CERES_HPP
 
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 #include "openMVG/sfm/sfm_data_BA.hpp"
 
@@ -28,10 +29,10 @@ ceres::CostFunction * IntrinsicsToCostFunction
   const double weight = 0.0
 );
 
-class Bundle_Adjustment_Ceres : public Bundle_Adjustment
+class DLLEXPORT Bundle_Adjustment_Ceres : public Bundle_Adjustment
 {
   public:
-  struct BA_Ceres_options
+  struct DLLEXPORT BA_Ceres_options
   {
     bool bVerbose_;
     unsigned int nb_threads_;

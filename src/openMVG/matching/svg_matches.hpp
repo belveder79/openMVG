@@ -16,6 +16,12 @@
 #include <openMVG/matching/indMatch.hpp>
 #include <openMVG/features/feature_container.hpp>
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 namespace openMVG {
 namespace matching {
 
@@ -41,7 +47,7 @@ namespace matching {
    * @param[in] stroke_size Stroke size used to display the line between the
    * corresponding features.
    */
-std::string Matches2SVGString
+std::string DLLEXPORT Matches2SVGString
 (
   const std::string & left_image_path,
   const std::pair<size_t,size_t> & left_image_size,
@@ -77,7 +83,7 @@ std::string Matches2SVGString
  * @param[in] stroke_size Stroke size used to display the line between the
  * corresponding features.
  */
-bool Matches2SVG
+bool DLLEXPORT Matches2SVG
 (
   const std::string & left_image_path,
   const std::pair<size_t,size_t> & left_image_size,
@@ -115,7 +121,7 @@ bool Matches2SVG
  * @param[in] stroke_size Stroke size used to display the line between the
  * corresponding features.
  */
-bool InlierMatches2SVG
+bool DLLEXPORT InlierMatches2SVG
 (
   const std::string & left_image_path,
   const std::pair<size_t,size_t> & left_image_size,

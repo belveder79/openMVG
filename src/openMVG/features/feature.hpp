@@ -33,8 +33,8 @@ namespace features {
  */
 class DLLEXPORT PointFeature {
 
-  friend std::ostream& operator<<(std::ostream& out, const PointFeature& obj);
-  friend std::istream& operator>>(std::istream& in, PointFeature& obj);
+  friend DLLEXPORT std::ostream& operator<<(std::ostream& out, const PointFeature& obj);
+  friend DLLEXPORT std::istream& operator>>(std::istream& in, PointFeature& obj);
 
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
@@ -65,8 +65,8 @@ protected:
  */
 class DLLEXPORT SIOPointFeature : public PointFeature {
 
-  friend std::ostream& operator<<(std::ostream& out, const SIOPointFeature& obj);
-  friend std::istream& operator>>(std::istream& in, SIOPointFeature& obj);
+  friend DLLEXPORT std::ostream& operator<<(std::ostream& out, const SIOPointFeature& obj);
+  friend DLLEXPORT std::istream& operator>>(std::istream& in, SIOPointFeature& obj);
 
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
@@ -109,8 +109,8 @@ float getCoterminalAngle(float angle);
 */
 class DLLEXPORT AffinePointFeature : public PointFeature {
 
-  friend std::ostream& operator<<(std::ostream& out, const AffinePointFeature& obj);
-  friend std::istream& operator>>(std::istream& in, AffinePointFeature& obj);
+  friend DLLEXPORT std::ostream& operator<<(std::ostream& out, const AffinePointFeature& obj);
+  friend DLLEXPORT std::istream& operator>>(std::istream& in, AffinePointFeature& obj);
 
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW

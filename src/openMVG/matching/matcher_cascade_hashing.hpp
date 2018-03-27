@@ -34,7 +34,7 @@ namespace matching {
 // If you use this matcher, please cite the paper.
 // template Metric parameter is ignored (by default compute square(L2 distance)).
 template < typename Scalar = float, typename Metric = L2<Scalar>>
-class ArrayMatcherCascadeHashing  : public ArrayMatcher<Scalar, Metric>
+class DLLEXPORT ArrayMatcherCascadeHashing  : public ArrayMatcher<Scalar, Metric>
 {
   public:
   using DistanceType = typename Metric::ResultType;

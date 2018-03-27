@@ -9,6 +9,12 @@
 #ifndef OPENMVG_MSER_MSER_REGION_HPP
 #define OPENMVG_MSER_MSER_REGION_HPP
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 #include <vector>
 
 namespace openMVG
@@ -23,7 +29,7 @@ namespace MSER
      * @note User should not deal with construction of the class but only use MSERExtractor to build regions
      * User should only use the FitEllipse method
      */
-    class MSERRegion
+    class DLLEXPORT MSERRegion
     {
       friend class MSERExtractor;
 

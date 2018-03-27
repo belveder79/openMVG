@@ -50,7 +50,7 @@ namespace tbmr
   * @param cmp ordering (std::less => BRIGHT features; or std::greater => DARK features)
   */
   template <typename Ordering = std::less<unsigned char>>
-  void Extract_tbmr
+  void DLLEXPORT Extract_tbmr
   (
     const image::Image<unsigned char> & ima,
     std::vector<features::AffinePointFeature> & features,

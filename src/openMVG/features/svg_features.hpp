@@ -31,7 +31,7 @@ namespace features {
  * @param[in] stroke_size Stroke size used to display the line between the
  * corresponding features.
  */
-bool Features2SVG
+bool DLLEXPORT Features2SVG
 (
   const std::string & image_path,
   const std::pair<size_t,size_t> & image_size,
@@ -54,7 +54,7 @@ bool Features2SVG
  * @param[in] stroke_size Stroke size used to display the line between the
  * corresponding features.
  */
-bool Features2SVG
+bool DLLEXPORT Features2SVG
 (
   const std::string & image_path,
   const std::pair<size_t,size_t> & image_size,
@@ -83,7 +83,7 @@ bool Features2SVG
  * @param[in] stroke_size Stroke size used to display the line between the
  * corresponding features.
  */
-bool Features2SVG
+bool DLLEXPORT Features2SVG
 (
   const std::string & left_image_path,
   const std::pair<size_t,size_t> & left_image_size,
@@ -114,7 +114,7 @@ bool Features2SVG
  * @param[in] stroke_size Stroke size used to display the line between the
  * corresponding features.
  */
-bool Features2SVG
+bool DLLEXPORT Features2SVG
 (
   const std::string & left_image_path,
   const std::pair<size_t,size_t> & left_image_size,

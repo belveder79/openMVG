@@ -17,7 +17,7 @@ namespace openMVG {
 namespace matching {
 
 template < typename Scalar, typename Metric >
-class ArrayMatcher
+class DLLEXPORT ArrayMatcher
 {
   public:
   using ScalarT = Scalar;

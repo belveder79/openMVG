@@ -28,7 +28,7 @@ namespace matching {
 
 /// Structure in order to save pairwise indexed references.
 /// A sort operator exist in order to remove duplicates of IndMatch series.
-struct IndMatch
+struct DLLEXPORT IndMatch
 {
   IndMatch(IndexT i = 0, IndexT j = 0) : i_(i), j_(j)  {}
 
@@ -61,11 +61,11 @@ struct IndMatch
   IndexT i_, j_;  // Left, right index
 };
 
-inline std::ostream& operator<<(std::ostream & out, const IndMatch & obj) {
+inline DLLEXPORT std::ostream& operator<<(std::ostream & out, const IndMatch & obj) {
   return out << obj.i_ << " " << obj.j_;
 }
 
-inline std::istream& operator>>(std::istream & in, IndMatch & obj) {
+inline DLLEXPORT std::istream& operator>>(std::istream & in, IndMatch & obj) {
   return in >> obj.i_ >> obj.j_;
 }
 
@@ -73,7 +73,7 @@ using IndMatches = std::vector<matching::IndMatch>;
 
 /// Pairwise matches (indexed matches for a pair <I,J>)
 /// The interface used to store corresponding point indexes per images pairs
-class PairWiseMatchesContainer
+class DLLEXPORT PairWiseMatchesContainer
 {
 public:
   virtual ~PairWiseMatchesContainer() = default;

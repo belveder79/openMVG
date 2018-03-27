@@ -26,7 +26,7 @@ enum EAKAZE_DESCRIPTOR
   AKAZE_MLDB
 };
 
-class AKAZE_Image_describer : public Image_describer
+class DLLEXPORT AKAZE_Image_describer : public Image_describer
 {
 public:
 

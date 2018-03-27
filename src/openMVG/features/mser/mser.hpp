@@ -9,6 +9,14 @@
 #ifndef OPENMVG_FEATURES_MSER_MSER_HPP
 #define OPENMVG_FEATURES_MSER_MSER_HPP
 
+#ifndef DECLSPEC
+#ifdef OPENMVG_DLLEXPORT
+#define DECLSPEC __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+#endif
+
 #include <vector>
 namespace openMVG { namespace image { template <typename T> class Image; } }
 
@@ -44,7 +52,7 @@ namespace openMVG
       *
       * We do this because MSER is extracted from the lowest grayscale level to the upper and so is extracts only the black regions
       */
-      class MSERExtractor
+      class DECLSPEC MSERExtractor
       {
       public:
 

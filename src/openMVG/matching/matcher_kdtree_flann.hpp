@@ -31,7 +31,7 @@ namespace matching  {
 // sqrt is monotonic so for performance reason we do not compute it.
 
 template < typename Scalar = float, typename  Metric = flann::L2<Scalar>>
-class ArrayMatcher_Kdtree_Flann : public ArrayMatcher<Scalar, Metric>
+class DLLEXPORT ArrayMatcher_Kdtree_Flann : public ArrayMatcher<Scalar, Metric>
 {
   public:
   using DistanceType = typename Metric::ResultType;

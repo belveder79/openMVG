@@ -39,7 +39,7 @@ namespace openMVG {
 namespace homography {
 namespace kernel {
 
-struct FourPointSolver {
+struct DLLEXPORT FourPointSolver {
   enum { MINIMUM_SAMPLES = 4 };
   enum { MAX_MODELS = 1 };
   /**

@@ -25,7 +25,7 @@ namespace matching {
 
 // By default compute square(L2 distance).
 template < typename Scalar = float, typename Metric = L2<Scalar>>
-class ArrayMatcherBruteForce : public ArrayMatcher<Scalar, Metric>
+class DLLEXPORT ArrayMatcherBruteForce : public ArrayMatcher<Scalar, Metric>
 {
   public:
   using DistanceType = typename Metric::ResultType;
