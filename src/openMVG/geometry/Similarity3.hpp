@@ -9,6 +9,12 @@
 #ifndef OPENMVG_GEOMETRY_SIMILARITY3_HPP
 #define OPENMVG_GEOMETRY_SIMILARITY3_HPP
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 #include "openMVG/geometry/pose3.hpp"
 
 namespace openMVG
@@ -19,7 +25,7 @@ namespace geometry
 /**
 * @brief Define a 3D Similarity transform encoded as a 3D pose plus a scale
 */
-struct Similarity3
+struct DLLEXPORT Similarity3
 {
   /// Pose
   Pose3 pose_;

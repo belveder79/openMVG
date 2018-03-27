@@ -10,6 +10,7 @@
 #define OPENMVG_LINFINITY_COMPUTER_VISION_TRIPLET_TIJS_AND_KIS_KERNEL_HPP
 
 #include <vector>
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
 namespace openMVG {
@@ -17,7 +18,7 @@ namespace trifocal {
 namespace kernel {
 
 /// A trifocal tensor seen as 3 projective cameras
-struct TrifocalTensorModel {
+struct DLLEXPORT TrifocalTensorModel {
 
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
@@ -41,7 +42,7 @@ EIGEN_DEFINE_STL_VECTOR_SPECIALIZATION_INITIALIZER_LIST(openMVG::trifocal::kerne
 namespace openMVG{
 
 /// Solve the translations and the structure of a view-triplet that have known rotations
-struct translations_Triplet_Solver {
+struct DLLEXPORT translations_Triplet_Solver {
   enum { MINIMUM_SAMPLES = 4 };
   enum { MAX_MODELS = 1 };
 

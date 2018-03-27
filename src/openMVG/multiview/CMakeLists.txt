@@ -26,6 +26,7 @@ install(TARGETS openMVG_multiview DESTINATION lib EXPORT openMVG-targets)
 target_link_libraries(
   openMVG_multiview
   PRIVATE
+    openMVG_features
     openMVG_numeric
     ${LEMON_LIBRARY}
     ${CERES_LIBRARIES})
@@ -37,6 +38,12 @@ set_target_properties(openMVG_multiview PROPERTIES SOVERSION ${OPENMVG_VERSION_M
 
 add_library(openMVG_multiview_test_data ${MULTIVIEWTESTDATA})
 set_property(TARGET openMVG_multiview_test_data PROPERTY FOLDER OpenMVG/OpenMVG)
+target_link_libraries(
+  openMVG_multiview_test_data
+  PRIVATE
+    openMVG_multiview
+    openMVG_features
+    openMVG_numeric)
 
 # Triangulation routines
 UNIT_TEST(openMVG triangulation "openMVG_multiview_test_data;openMVG_multiview")

@@ -20,7 +20,7 @@ namespace geometry
 * @brief Defines a pose in 3d space
 * [R|C] t = -RC
 */
-class Pose3
+class DLLEXPORT Pose3
 {
   protected:
 

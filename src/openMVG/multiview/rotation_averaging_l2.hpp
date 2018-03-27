@@ -11,6 +11,7 @@
 
 #include <vector>
 
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/multiview/rotation_averaging_common.hpp"
 
 #ifdef _MSC_VER
@@ -33,7 +34,7 @@ namespace l2  {
 // [1] 6.7.2 Consistent Rotation page 89
 // Closest Rotation Estimation R = U*transpose(V)
 //  approximate rotation in the Frobenius norm using SVD
-Mat3 ClosestSVDRotationMatrix(const Mat3 & rotMat);
+DLLEXPORT Mat3 ClosestSVDRotationMatrix(const Mat3 & rotMat);
 
 //-- Solve the Global Rotation matrix registration for each camera given a list
 //    of relative orientation using matrix parametrization
@@ -58,13 +59,13 @@ Mat3 ClosestSVDRotationMatrix(const Mat3 & rotMat);
 // vector.add( RelativeRotation(1,2, R12) );
 // vector.add( RelativeRotation(0,2, R02) );
 //
-bool L2RotationAveraging( size_t nCamera,
+DLLEXPORT bool L2RotationAveraging( size_t nCamera,
   const RelativeRotations& vec_relativeRot,
   // Output
   std::vector<Mat3> & vec_ApprRotMatrix);
 
 // None linear refinement of the rotation using an angle-axis representation
-bool L2RotationAveraging_Refine(
+DLLEXPORT bool L2RotationAveraging_Refine(
   const RelativeRotations & vec_relativeRot,
   std::vector<openMVG::Mat3> & vec_ApprRotMatrix);
 

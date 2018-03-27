@@ -10,6 +10,7 @@
 #define OPENMVG_MULTIVIEW_SOLVER_ESSENTIAL_SPHERICAL_HPP
 
 #include <vector>
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
 namespace openMVG {
@@ -20,7 +21,7 @@ namespace openMVG {
  * See page 294 in HZ Result 11.1.
  *
  */
-struct EightPointRelativePoseSolver {
+struct DLLEXPORT EightPointRelativePoseSolver {
   enum { MINIMUM_SAMPLES = 8 };
   enum { MAX_MODELS = 1 };
   static void Solve
@@ -32,7 +33,7 @@ struct EightPointRelativePoseSolver {
 };
 
 // Return the angular error between [0; PI/2]
-struct AngularError
+struct DLLEXPORT AngularError
 {
   static double Error
   (

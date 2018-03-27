@@ -33,6 +33,7 @@
 #include <vector>
 
 #include "openMVG/multiview/two_view_kernel.hpp"
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
 namespace openMVG {
@@ -50,13 +51,13 @@ namespace kernel {
  *
  * \see http://www.cs.unc.edu/~marc/tutorial/node55.html
  */
-struct SevenPointSolver {
+struct DLLEXPORT SevenPointSolver {
   enum { MINIMUM_SAMPLES = 7 };
   enum { MAX_MODELS = 3 };
   static void Solve(const Mat2X &x1, const Mat2X &x2, std::vector<Mat3> *F);
 };
 
-struct EightPointSolver {
+struct DLLEXPORT EightPointSolver {
   enum { MINIMUM_SAMPLES = 8 };
   enum { MAX_MODELS = 1 };
   static void Solve(const Mat2X &x1, const Mat2X &x2, std::vector<Mat3> *Fs);
@@ -95,15 +96,15 @@ inline void EncodeEpipolarEquation(const TMatX &x1, const TMatX &x2, TMatA *A) {
 }
 
 /// Compute SampsonError related to the Fundamental matrix and 2 correspondences
-struct SampsonError {
+struct DLLEXPORT SampsonError {
   static double Error(const Mat3 &F, const Vec2 &x, const Vec2 &y);
 };
 
-struct SymmetricEpipolarDistanceError {
+struct DLLEXPORT SymmetricEpipolarDistanceError {
   static double Error(const Mat3 &F, const Vec2 &x, const Vec2 &y);
 };
 
-struct EpipolarDistanceError {
+struct DLLEXPORT EpipolarDistanceError {
   static double Error(const Mat3 &F, const Vec2 &x, const Vec2 &y);
 };
 

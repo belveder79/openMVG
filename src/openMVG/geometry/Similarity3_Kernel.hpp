@@ -14,6 +14,12 @@
 
 #include <vector>
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 namespace openMVG
 {
 namespace geometry
@@ -21,7 +27,7 @@ namespace geometry
 namespace kernel
 {
 
-struct Similarity3Solver
+struct DLLEXPORT Similarity3Solver
 {
   enum { MINIMUM_SAMPLES = 3 };
   enum { MAX_MODELS = 1 };
@@ -43,7 +49,7 @@ struct Similarity3Solver
   );
 };
 
-struct Similarity3ErrorSquaredMetric
+struct DLLEXPORT Similarity3ErrorSquaredMetric
 {
   // Return the Squared error between a collection of points (stored as column)
   static Vec ErrorVec

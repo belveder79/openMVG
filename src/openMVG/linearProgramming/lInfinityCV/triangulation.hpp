@@ -11,6 +11,8 @@
 
 #include "openMVG/linearProgramming/linearProgrammingInterface.hpp"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
+#include "openMVG/numeric/numeric.h"
+
 
 //--
 //- Implementation of algorithm from Paper titled :
@@ -52,7 +54,7 @@ void EncodeTriangulation
 ///    - Estimation of Xi from Pj and xij
 /// Implementation of problem of [1] -> 5.1 The triangulation problem
 ///  under a Linear Program form.
-struct Triangulation_L1_ConstraintBuilder
+struct DLLEXPORT Triangulation_L1_ConstraintBuilder
 {
   Triangulation_L1_ConstraintBuilder
   (

@@ -31,7 +31,7 @@ namespace openMVG {
 /// Implementation of [1] : "5. Solving the Translations Problem" equation (3)
 /// Compute camera center positions from relative camera translations (translation directions).
 bool
-solve_translations_problem_l2_chordal
+DLLEXPORT solve_translations_problem_l2_chordal
 (
   const int* edges,
   const double* poses,
@@ -59,7 +59,7 @@ solve_translations_problem_l2_chordal
 * @return True if the registration can be solved
 */
 bool
-solve_translations_problem_softl1
+DLLEXPORT solve_translations_problem_softl1
 (
   const std::vector<openMVG::RelativeInfo_Vec > & vec_initial_estimates,
   std::vector<Eigen::Vector3d> & translations,

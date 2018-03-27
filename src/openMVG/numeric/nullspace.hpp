@@ -9,6 +9,7 @@
 #ifndef OPENMVG_NUMERIC_NULLSPACE_HPP
 #define OPENMVG_NUMERIC_NULLSPACE_HPP
 
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
 namespace openMVG
@@ -29,7 +30,7 @@ namespace openMVG
 * @note Input matrix A content may be modified during computation
 * @note Input vector nullspace may be resized to store the full result
 */
-double Nullspace
+double DLLEXPORT Nullspace
 (
   const Eigen::Ref<const Mat> & A,
   Eigen::Ref<Vec> nullspace

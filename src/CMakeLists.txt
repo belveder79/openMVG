@@ -83,6 +83,7 @@ endif (WIN32)
 # Set shared or static mode
 if (OpenMVG_BUILD_SHARED)
   set(BUILD_SHARED_LIBS ON)
+  ADD_DEFINITIONS(-DOPENMVG_DLLEXPORT)
 else (OpenMVG_BUILD_SHARED)
   set(BUILD_SHARED_LIBS OFF)
 endif()

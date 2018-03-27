@@ -17,6 +17,12 @@
 
 #include "openMVG/types.hpp"
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 namespace openMVG {
 namespace matching {
 
@@ -94,7 +100,7 @@ struct PairWiseMatches :
   }
 };
 
-inline Pair_Set getPairs(const PairWiseMatches & matches)
+inline Pair_Set DLLEXPORT getPairs(const PairWiseMatches & matches)
 {
   Pair_Set pairs;
   for ( const auto & cur_pair : matches )

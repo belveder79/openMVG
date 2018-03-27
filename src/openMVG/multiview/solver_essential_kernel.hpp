@@ -45,7 +45,7 @@ namespace kernel {
  * correspondences. It solves the relative pose problem.
  * Input point must be normalized one.
  */
-struct FivePointSolver {
+struct DLLEXPORT FivePointSolver {
   enum { MINIMUM_SAMPLES = 5 };
   enum { MAX_MODELS = 10 };
   static void Solve(const Mat3X &x1, const Mat3X &x2, std::vector<Mat3> *E);
@@ -58,7 +58,7 @@ struct FivePointSolver {
 template<typename SolverArg,
   typename ErrorArg,
   typename ModelArg = Mat3>
-class EssentialKernel :
+class DLLEXPORT EssentialKernel :
    public two_view::kernel::Kernel<SolverArg,ErrorArg, ModelArg>
 {
 public:

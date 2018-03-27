@@ -29,6 +29,7 @@
 #ifndef OPENMVG_MULTIVIEW_PROJECTION_HPP
 #define OPENMVG_MULTIVIEW_PROJECTION_HPP
 
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
 /// Collection of function related to the classic Projection matrix used
@@ -43,7 +44,7 @@ namespace openMVG
 * @param t Translation vector
 * @param[out] P Projection matrix
 */
-void P_From_KRt( const Mat3 &K, const Mat3 &R, const Vec3 &t, Mat34 *P );
+DLLEXPORT void P_From_KRt( const Mat3 &K, const Mat3 &R, const Vec3 &t, Mat34 *P );
 
 /**
 * Decompose using the RQ decomposition
@@ -54,7 +55,7 @@ void P_From_KRt( const Mat3 &K, const Mat3 &R, const Vec3 &t, Mat34 *P );
 * @ref Multiple View Geometry - Richard Hartley, Andrew Zisserman - second edition
 * @see  HZ A4.1.1 pag.579.
 */
-void KRt_From_P( const Mat34 &P, Mat3 *Kp, Mat3 *Rp, Vec3 *tp );
+DLLEXPORT void KRt_From_P( const Mat34 &P, Mat3 *Kp, Mat3 *Rp, Vec3 *tp );
 
 /**
 * @brief Compute a fundamental matrix from projection matrices
@@ -62,7 +63,7 @@ void KRt_From_P( const Mat34 &P, Mat3 *Kp, Mat3 *Rp, Vec3 *tp );
 * @param P2 Projection matrix of second camera
 * @return Fundamental matrix between the two camera
 */
-Mat3 F_from_P( const Mat34 & P1, const Mat34 & P2 );
+DLLEXPORT Mat3 F_from_P( const Mat34 & P1, const Mat34 & P2 );
 
 /**
 * @brief Compute the depth of the X point. R*X[2]+t[2]
@@ -71,7 +72,7 @@ Mat3 F_from_P( const Mat34 & P1, const Mat34 & P2 );
 * @param X 3d points
 * @return Depth of X wtr to the camera center
 */
-double Depth( const Mat3 &R, const Vec3 &t, const Vec3 &X );
+DLLEXPORT double Depth( const Mat3 &R, const Vec3 &t, const Vec3 &X );
 
 /**
 * @brief Compute P*[X|1.0]. Transformed from homogeneous to euclidean coordinates
@@ -79,7 +80,7 @@ double Depth( const Mat3 &R, const Vec3 &t, const Vec3 &X );
 * @param X Input 3d point
 * @return Projected point
 */
-Vec2 Project( const Mat34 &P, const Vec3 &X );
+DLLEXPORT Vec2 Project( const Mat34 &P, const Vec3 &X );
 
 /**
 * @brief Compute P*[X|1.0] for the X list of point (3D point)
@@ -87,7 +88,7 @@ Vec2 Project( const Mat34 &P, const Vec3 &X );
 * @param X Input 3d points
 * @param[out] x Projected points
 */
-void Project( const Mat34 &P, const Mat3X &X, Mat2X *x );
+DLLEXPORT void Project( const Mat34 &P, const Mat3X &X, Mat2X *x );
 
 /**
 * @brief Compute P*[X|1.0] for the X list of point (4D point)
@@ -95,7 +96,7 @@ void Project( const Mat34 &P, const Mat3X &X, Mat2X *x );
 * @param X Input 4d points
 * @param[out] x Projected points
 */
-void Project( const Mat34 &P, const Mat4X &X, Mat2X *x );
+DLLEXPORT void Project( const Mat34 &P, const Mat4X &X, Mat2X *x );
 
 /**
 * @brief Return P*[X|1.0] for the X list of point (3D point)
@@ -103,7 +104,7 @@ void Project( const Mat34 &P, const Mat4X &X, Mat2X *x );
 * @param X Input 3d points
 * @return Projected points
 */
-Mat2X Project( const Mat34 &P, const Mat3X &X );
+DLLEXPORT Mat2X Project( const Mat34 &P, const Mat3X &X );
 
 /**
 * @brief Return P*[X|1.0] for the X list of point (4D point)
@@ -111,7 +112,7 @@ Mat2X Project( const Mat34 &P, const Mat3X &X );
 * @param X Input 4d points
 * @return Projected points
 */
-Mat2X Project( const Mat34 &P, const Mat4X &X );
+DLLEXPORT Mat2X Project( const Mat34 &P, const Mat4X &X );
 
 /**
 * @brief Estimates the root mean square error (2D)
@@ -120,7 +121,7 @@ Mat2X Project( const Mat34 &P, const Mat4X &X );
 * @param P Projection matrix
 * @return RMS of projection error
 */
-double RootMeanSquareError( const Mat2X &x_image,
+DLLEXPORT double RootMeanSquareError( const Mat2X &x_image,
                             const Mat4X &X_world,
                             const Mat34 &P );
 
@@ -133,7 +134,7 @@ double RootMeanSquareError( const Mat2X &x_image,
 * @param t translation vector
 * @note KRt defines a projection
 */
-double RootMeanSquareError( const Mat2X &x_image,
+DLLEXPORT double RootMeanSquareError( const Mat2X &x_image,
                             const Mat3X &X_world,
                             const Mat3 &K,
                             const Mat3 &R,

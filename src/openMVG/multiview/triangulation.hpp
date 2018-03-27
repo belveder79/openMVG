@@ -24,7 +24,7 @@ namespace openMVG
 * @see HZ 12.2 pag.312
 * @ref Multiple View Geometry - Richard Hartley, Andrew Zisserman - second edition
 */
-void TriangulateDLT
+DLLEXPORT void TriangulateDLT
 (
   const Mat34 &P1,
   const Vec3 &x1,
@@ -43,7 +43,7 @@ void TriangulateDLT
 * @see HZ 12.2 pag.312
 * @ref Multiple View Geometry - Richard Hartley, Andrew Zisserman - second edition
 */
-void TriangulateDLT
+DLLEXPORT void TriangulateDLT
 ( const Mat34 &P1,
   const Vec3 &x1,
   const Mat34 &P2,

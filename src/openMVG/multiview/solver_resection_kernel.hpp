@@ -13,6 +13,7 @@
 
 #include "openMVG/multiview/two_view_kernel.hpp"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
+#include "openMVG/numeric/numeric.h"
 
 namespace openMVG {
 namespace resection {
@@ -25,7 +26,7 @@ namespace kernel {
  * Rely on Linear Resection algorithm.
  * Work from 6 to N points.
  */
-struct SixPointResectionSolver {
+struct DLLEXPORT SixPointResectionSolver {
   enum { MINIMUM_SAMPLES = 6 };
   enum { MAX_MODELS = 1 };
   // Solve the problem of camera pose.

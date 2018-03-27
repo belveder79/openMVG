@@ -14,6 +14,12 @@
 
 #include "openMVG/geometry/half_space_intersection.hpp"
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 namespace openMVG
 {
 
@@ -31,7 +37,7 @@ using namespace openMVG::geometry::halfPlane;
 *  - truncated Frustum (6 Half Spaces) (a truncated pyramid)
 *  - This structure is used for testing frustum intersection (see if two cam can share visual content)
 */
-struct Frustum : public HalfPlaneObject
+struct DLLEXPORT Frustum : public HalfPlaneObject
 {
   /// Camera centre and the 4 points that define the image plane
   Vec3 cones[5];

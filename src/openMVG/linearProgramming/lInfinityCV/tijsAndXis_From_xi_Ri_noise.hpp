@@ -62,7 +62,7 @@ void EncodeTiXi_withNoise
   std::vector<std::pair<double,double>> & vec_bounds
 );
 
-struct TiXi_withNoise_L1_ConstraintBuilder
+struct DLLEXPORT TiXi_withNoise_L1_ConstraintBuilder
 {
   TiXi_withNoise_L1_ConstraintBuilder(
     const std::vector<Mat3> & vec_Ri,

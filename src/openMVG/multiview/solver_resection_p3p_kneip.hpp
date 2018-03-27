@@ -10,11 +10,12 @@
 #define OPENMVG_MULTIVIEW_RESECTION_P3P_KNEIP_HPP
 
 #include "openMVG/multiview/two_view_kernel.hpp"
+#include "openMVG/numeric/numeric.h"
 
 namespace openMVG {
 namespace euclidean_resection {
 
-struct P3PSolver_Kneip {
+struct DLLEXPORT P3PSolver_Kneip {
   enum { MINIMUM_SAMPLES = 3 };
   enum { MAX_MODELS = 4};
 

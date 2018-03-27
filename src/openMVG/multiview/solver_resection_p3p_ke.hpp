@@ -11,10 +11,16 @@
 
 #include "openMVG/multiview/two_view_kernel.hpp"
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 namespace openMVG {
 namespace euclidean_resection {
 
-struct P3PSolver_Ke {
+struct DLLEXPORT P3PSolver_Ke {
   enum { MINIMUM_SAMPLES = 6 };
   enum { MAX_MODELS = 1 };
 

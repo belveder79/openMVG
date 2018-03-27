@@ -14,6 +14,12 @@
 #include <chrono>
 #include <iostream>
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 namespace openMVG
 {
 /**
@@ -25,7 +31,7 @@ namespace system
 /**
 * @brief Timer class with microsecond accuracy.
 */
-class Timer
+class DLLEXPORT  Timer
 {
   public:
 

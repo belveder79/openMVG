@@ -10,6 +10,7 @@
 #define OPENMVG_LINFINITY_COMPUTER_VISION_RESECTION_HPP
 
 #include "openMVG/linearProgramming/linearProgrammingInterface.hpp"
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
 //--
@@ -41,7 +42,7 @@ namespace lInfinityCV  {
 //      (simplex) instead of using SOCP (second order cone programming).
 //      Implementation by Pierre Moulon
 //
-void EncodeResection
+DLLEXPORT void EncodeResection
 (
   const Mat2X & Pt2D,
   const Mat3X & Pt3D,

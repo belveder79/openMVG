@@ -14,6 +14,13 @@
 
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
+#ifdef OPENMVG_DLLEXPORT
+  #define DLLEXPORT __declspec(dllexport) 
+#else 
+  #define DLLEXPORT
+#endif
+
+
 namespace openMVG   {
 namespace linearProgramming  {
 

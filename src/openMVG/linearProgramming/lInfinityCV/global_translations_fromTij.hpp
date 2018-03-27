@@ -48,7 +48,7 @@ void EncodeTi_from_tij
 //-- Estimate the translation from heading relative translations of triplets.
 //- Translation directions must not be normalized (in this way relative scale
 //-  of relative motions is kept and colinear motion is supported).
-struct Tifromtij_ConstraintBuilder
+struct DLLEXPORT Tifromtij_ConstraintBuilder
 {
   explicit Tifromtij_ConstraintBuilder
   (

@@ -23,18 +23,18 @@ namespace linearProgramming  {
 class OSI_X_SolverWrapper : public LP_Solver
 {
 public:
-  explicit OSI_X_SolverWrapper(int nbParams);
+	DLLEXPORT explicit OSI_X_SolverWrapper(int nbParams);
 
   //--
   // Inherited functions:
   //--
 
-  bool setup(const LP_Constraints & constraints) override;
-  bool setup(const LP_Constraints_Sparse & constraints) override;
+	DLLEXPORT bool setup(const LP_Constraints & constraints) override;
+	DLLEXPORT bool setup(const LP_Constraints_Sparse & constraints) override;
 
-  bool solve() override;
+	DLLEXPORT bool solve() override;
 
-  bool getSolution(std::vector<double> & estimatedParams) override;
+	DLLEXPORT bool getSolution(std::vector<double> & estimatedParams) override;
 
 private:
   std::shared_ptr<OsiClpSolverInterface> si;

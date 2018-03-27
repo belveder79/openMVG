@@ -22,6 +22,8 @@ target_link_libraries(
   PRIVATE
     openMVG_geometry
     openMVG_multiview
+	openMVG_features
+	openMVG_numeric
     stlplus
     ${CERES_LIBRARIES}
     openMVG_lInftyComputerVision

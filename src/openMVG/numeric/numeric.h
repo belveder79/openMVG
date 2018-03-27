@@ -38,6 +38,12 @@
 
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 namespace openMVG
 {
 
@@ -87,7 +93,7 @@ inline T clamp( const T & val, const T& min, const T & max )
 * @param x Input vector
 * @return Cross product matrix of a input vector
 */
-Mat3 CrossProductMatrix( const Vec3 &x );
+DLLEXPORT Mat3 CrossProductMatrix( const Vec3 &x );
 
 
 /**
@@ -95,7 +101,7 @@ Mat3 CrossProductMatrix( const Vec3 &x );
 * @param angle Angle of rotation in radian
 * @return Rotation matrix of given magnitude
 */
-Mat3 RotationAroundX( double angle );
+DLLEXPORT Mat3 RotationAroundX( double angle );
 
 
 /**
@@ -103,7 +109,7 @@ Mat3 RotationAroundX( double angle );
 * @param angle Angle of rotation in radian
 * @return Rotation matrix of given magnitude
 */
-Mat3 RotationAroundY( double angle );
+DLLEXPORT Mat3 RotationAroundY( double angle );
 
 
 /**
@@ -111,7 +117,7 @@ Mat3 RotationAroundY( double angle );
 * @param angle Angle sof rotation in radian
 * @return Rotation matrix of given magnitude
 */
-Mat3 RotationAroundZ( double angle );
+DLLEXPORT Mat3 RotationAroundZ( double angle );
 
 
 /**
@@ -144,7 +150,7 @@ inline double R2D( double radian )
 * @note Assuming R2 is a correct rotation matrix
 * @note Mean is computed using the matrix column dot products to an Identity matrix
 */
-double  getRotationMagnitude( const Mat3 & R2 );
+DLLEXPORT double  getRotationMagnitude( const Mat3 & R2 );
 
 /**
 * @brief Gives an indication of the sign of the input value
@@ -189,7 +195,7 @@ inline double DistanceLInfinity( const TVec &x, const TVec &y )
 * @param up Desired up vector (y-axis)
 * @return Rotation matrix
 */
-Mat3 LookAt( const Vec3 &center, const Vec3 & up = Vec3::UnitY() );
+DLLEXPORT Mat3 LookAt( const Vec3 &center, const Vec3 & up = Vec3::UnitY() );
 
 
 /**
@@ -199,7 +205,7 @@ Mat3 LookAt( const Vec3 &center, const Vec3 & up = Vec3::UnitY() );
 * @param upVector3D Desired up vector (y-axis)
 * @return Rotation matrix conforming the given parameters
 */
-Mat3 LookAt2( const Vec3 &eyePosition3D,
+DLLEXPORT Mat3 LookAt2( const Vec3 &eyePosition3D,
               const Vec3 &center3D = Vec3::Zero(),
               const Vec3 &upVector3D = Vec3::UnitY() );
 
@@ -317,7 +323,7 @@ double CosinusBetweenMatrices( const TMat &a, const TMat &b )
 * @param[out] variance_pointer a pointer to a vector where variance values are stored
 * @note mean_pointer and variance_pointer vector may be resized to store all values
 */
-void MeanAndVarianceAlongRows( const Mat &A,
+DLLEXPORT void MeanAndVarianceAlongRows( const Mat &A,
                                Vec *mean_pointer,
                                Vec *variance_pointer );
 

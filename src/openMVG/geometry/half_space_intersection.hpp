@@ -9,6 +9,7 @@
 #ifndef OPENMVG_GEOMETRY_HALF_SPACE_INTERSECTION_HPP
 #define OPENMVG_GEOMETRY_HALF_SPACE_INTERSECTION_HPP
 
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
 EIGEN_DEFINE_STL_VECTOR_SPECIALIZATION_INITIALIZER_LIST(Eigen::Hyperplane<double, 3>)
@@ -34,7 +35,7 @@ using Half_planes = std::vector<Half_plane>;
 * @return Plane formed by p,q,r
 * @note The plane is oriented such that p, q and r are oriented in a positive sense (that is counterclockwise).
 */
-Half_plane
+Half_plane DLLEXPORT
 Half_plane_p
 (
   const Vec3 & p,
@@ -55,7 +56,7 @@ Half_plane_p
  Year: 1979
  More: ISSN 0304-3975, http://dx.doi.org/10.1016/0304-3975(79)90055-0.
 */
-bool
+bool DLLEXPORT
 isNotEmpty
 (
   const Half_planes & hplanes
@@ -65,7 +66,7 @@ isNotEmpty
 * @brief Define a Volume 'object' thanks to a series of half_plane:
 *  - This structure is used for testing generic HalfPlaneObject/HalfPlaneObject intersection
 */
-struct HalfPlaneObject
+struct DLLEXPORT HalfPlaneObject
 {
   Half_planes planes;
 
@@ -91,7 +92,7 @@ struct HalfPlaneObject
 * @retval true If a non-empty intersection exists
 * @retval false If there's no intersection
 */
-bool
+bool DLLEXPORT
 intersect
 (
   const std::vector<HalfPlaneObject> & hplanes

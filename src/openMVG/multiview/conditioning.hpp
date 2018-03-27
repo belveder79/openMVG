@@ -30,6 +30,7 @@
 #define OPENMVG_MULTIVIEW_CONDITIONNING_HPP
 
 #include "openMVG/numeric/eigen_alias_definition.hpp"
+#include "openMVG/numeric/numeric.h"
 
 //-- Implementation of normalized coordinates.
 // Normalization improve accuracy of results and provide benefits
@@ -44,7 +45,7 @@ namespace openMVG
 * @param points Input points
 * @param[out] T Output conditioning matrix
 */
-void PreconditionerFromPoints( const Mat &points, Mat3 *T );
+DLLEXPORT void PreconditionerFromPoints( const Mat &points, Mat3 *T );
 
 /**
 * @brief Normalize input point for a given T transform matrix
@@ -52,7 +53,7 @@ void PreconditionerFromPoints( const Mat &points, Mat3 *T );
 * @param T Input conditioning matrix
 * @param[out] transformed_points transformed (ie: conditioned ) points
 */
-void ApplyTransformationToPoints( const Mat &points,
+DLLEXPORT void ApplyTransformationToPoints( const Mat &points,
                                   const Mat3 &T,
                                   Mat *transformed_points );
 
@@ -62,7 +63,7 @@ void ApplyTransformationToPoints( const Mat &points,
 * @param[out] normalized_points Points after conditioning
 * @param[out] T Conditioning matrix used to normalize input points
 */
-void NormalizePoints( const Mat &points,
+DLLEXPORT void NormalizePoints( const Mat &points,
                       Mat *normalized_points,
                       Mat3 *T );
 
@@ -75,7 +76,7 @@ void NormalizePoints( const Mat &points,
 * @note Transformation compress input range to [ -sqrt(2); sqrt(2)]
 * @note Range is [0;width]x[0;height]
 */
-void PreconditionerFromPoints( int width, int height, Mat3 *T );
+DLLEXPORT void PreconditionerFromPoints( int width, int height, Mat3 *T );
 
 /**
 * @brief Normalize point row image coordinates to [- sqrt(2); sqrt(2) ]
@@ -85,7 +86,7 @@ void PreconditionerFromPoints( int width, int height, Mat3 *T );
 * @param width Range of points
 * @param height Range of points
 */
-void NormalizePoints( const Mat &points,
+DLLEXPORT void NormalizePoints( const Mat &points,
                       Mat *normalized_points,
                       Mat3 *T, int width, int height );
 
@@ -93,7 +94,7 @@ void NormalizePoints( const Mat &points,
 /**
 * @brief Unnormalize using Inverse
 */
-struct UnnormalizerI
+struct DLLEXPORT UnnormalizerI
 {
   /**
   * @brief Denormalize the results.
@@ -109,7 +110,7 @@ struct UnnormalizerI
 /**
 * Unnormalize using Transpose
 */
-struct UnnormalizerT
+struct DLLEXPORT UnnormalizerT
 {
   /**
   * @brief Denormalize the results.

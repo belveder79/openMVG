@@ -95,7 +95,7 @@ float getCoterminalAngle(float angle)
   return angle;
 }
 
-AffinePointFeature::AffinePointFeature
+ AffinePointFeature::AffinePointFeature
 (
   float x,
   float y,

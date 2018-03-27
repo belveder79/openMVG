@@ -32,7 +32,7 @@ void DistanceRatioMatch
   matching::IndMatches & matches // corresponding points
 );
 
-class RegionsMatcher
+class DLLEXPORT RegionsMatcher
 {
   public:
   virtual ~RegionsMatcher() = default;
@@ -59,7 +59,7 @@ class RegionsMatcher
 /**
  * Regions matching in query to database mode
  */
-class Matcher_Regions_Database
+class DLLEXPORT Matcher_Regions_Database
 {
   public:
 

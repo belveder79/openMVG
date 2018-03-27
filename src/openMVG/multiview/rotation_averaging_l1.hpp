@@ -35,7 +35,7 @@ using Matrix3x3Arr = std::vector<openMVG::Mat3>;
  * @param[out] Rs output global rotation matrices
  * @param[in] nMainViewID Id of the image considered as Identity (unit rotation)
  */
-void InitRotationsMST
+DLLEXPORT void InitRotationsMST
 (
   const RelativeRotations& RelRs,
   Matrix3x3Arr& Rs,
@@ -51,7 +51,7 @@ void InitRotationsMST
  * @param[in] threshold (optionnal) threshold
  * @param[out] vec_inliers rotation labelled as inliers or outliers
  */
-bool GlobalRotationsRobust(
+DLLEXPORT bool GlobalRotationsRobust(
   const RelativeRotations& RelRs,
   Matrix3x3Arr& Rs,
   const uint32_t nMainViewID,
@@ -66,7 +66,7 @@ bool GlobalRotationsRobust(
  * @param[in] nMainViewID Id of the image considered as Identity (unit rotation)
  * @param[in] sigma factor
  */
-bool RefineRotationsAvgL1IRLS(
+DLLEXPORT bool RefineRotationsAvgL1IRLS(
   const RelativeRotations& RelRs,
   Matrix3x3Arr& Rs,
   const uint32_t nMainViewID,
@@ -80,7 +80,7 @@ bool RefineRotationsAvgL1IRLS(
  * @param[in] threshold used to label rotations as inlier, or outlier (if 0, threshold is computed with the X84 law)
  * @param[in] vec_inliers inlier, outlier labels
  */
-unsigned int FilterRelativeRotations(
+DLLEXPORT unsigned int FilterRelativeRotations(
   const RelativeRotations& RelRs,
   const Matrix3x3Arr& Rs,
   float threshold = 0.f,

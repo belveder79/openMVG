@@ -9,6 +9,7 @@
 #ifndef OPENMVG_GEOMETRY_CONVEX_HULL_HPP
 #define OPENMVG_GEOMETRY_CONVEX_HULL_HPP
 
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
 namespace openMVG
@@ -30,7 +31,7 @@ namespace geometry
 ///  @param[in] convex_polygon  The convex polygon.
 ///
 ///  @return Returns true if the point is inside the polygon, else returns false.
-bool IsIn(const Eigen::Vector2d & p, const Polygon2d & polygon);
+DLLEXPORT bool IsIn(const Eigen::Vector2d & p, const Polygon2d & polygon);
 
 ///  @brief Compute the area of a convex polygon using the 'determinant method'
 ///         http://www.mathwords.com/a/area_convex_polygon.htm

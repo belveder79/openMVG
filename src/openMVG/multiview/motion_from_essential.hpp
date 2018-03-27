@@ -32,7 +32,7 @@ namespace openMVG
 *    of the cameras
 */
 
-bool RelativePoseFromEssential
+DLLEXPORT bool RelativePoseFromEssential
 (
   const Mat3X & x1,
   const Mat3X & x2,

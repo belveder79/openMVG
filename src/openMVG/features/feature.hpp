@@ -18,6 +18,12 @@
 
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 
+#ifdef OPENMVG_DLLEXPORT
+#define DLLEXPORT __declspec(dllexport) 
+#else 
+#define DLLEXPORT
+#endif
+
 namespace openMVG {
 namespace features {
 
@@ -25,7 +31,7 @@ namespace features {
  * Base class for Point features.
  * Store position of a feature point.
  */
-class PointFeature {
+class DLLEXPORT PointFeature {
 
   friend std::ostream& operator<<(std::ostream& out, const PointFeature& obj);
   friend std::istream& operator>>(std::istream& in, PointFeature& obj);
@@ -57,7 +63,7 @@ protected:
  * Base class for ScaleInvariant Oriented Point features.
  * Add scale and orientation description to basis PointFeature.
  */
-class SIOPointFeature : public PointFeature {
+class DLLEXPORT SIOPointFeature : public PointFeature {
 
   friend std::ostream& operator<<(std::ostream& out, const SIOPointFeature& obj);
   friend std::istream& operator>>(std::istream& in, SIOPointFeature& obj);
@@ -101,7 +107,7 @@ float getCoterminalAngle(float angle);
 * Base class for Affine "Point" features.
 * Add major & minor ellipse axis & orientation to the basis PointFeature.
 */
-class AffinePointFeature : public PointFeature {
+class DLLEXPORT AffinePointFeature : public PointFeature {
 
   friend std::ostream& operator<<(std::ostream& out, const AffinePointFeature& obj);
   friend std::istream& operator>>(std::istream& in, AffinePointFeature& obj);

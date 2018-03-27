@@ -30,6 +30,7 @@
 #ifndef OPENMVG_MULTIVIEW_ESSENTIAL_HPP
 #define OPENMVG_MULTIVIEW_ESSENTIAL_HPP
 
+#include "openMVG/numeric/numeric.h"
 #include "openMVG/numeric/eigen_alias_definition.hpp"
 #include "openMVG/geometry/pose3.hpp"
 
@@ -50,7 +51,7 @@ namespace openMVG
 * @param[out] R Relative rotation between camera 1 and camera 2
 * @param[out] t Relative translation between camera 1 and camera 2
 */
-void RelativeCameraMotion( const Mat3 &R1,
+DLLEXPORT void RelativeCameraMotion( const Mat3 &R1,
                            const Vec3 &t1,
                            const Mat3 &R2,
                            const Vec3 &t2,
@@ -64,7 +65,7 @@ void RelativeCameraMotion( const Mat3 &R1,
 * @param K2 Intrinsic matrix of second camera
 * @param[out] E Essential matrix
 */
-void EssentialFromFundamental( const Mat3 &F,
+DLLEXPORT void EssentialFromFundamental( const Mat3 &F,
                                const Mat3 &K1,
                                const Mat3 &K2,
                                Mat3 *E );
@@ -77,7 +78,7 @@ void EssentialFromFundamental( const Mat3 &F,
 * @param t2 Second camera translation vector
 * @param[out] Essential matrix
 */
-void EssentialFromRt( const Mat3 &R1,
+DLLEXPORT void EssentialFromRt( const Mat3 &R1,
                       const Vec3 &t1,
                       const Mat3 &R2,
                       const Vec3 &t2,
@@ -90,7 +91,7 @@ void EssentialFromRt( const Mat3 &R1,
 * @param K2 Intrinsic matrix of second camera
 * @param[out] F Fundamental matrix
 */
-void FundamentalFromEssential( const Mat3 &E,
+DLLEXPORT void FundamentalFromEssential( const Mat3 &E,
                                const Mat3 &K1,
                                const Mat3 &K2,
                                Mat3 *F );
